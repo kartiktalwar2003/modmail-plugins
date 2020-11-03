@@ -23,7 +23,7 @@ class GG(commands.Cog):
         async def before_serverstats(self):
             await self.bot.wait_until_ready()
         
-        @commands.command()
+        @commands.command(aliases = ["bota","bot"])
         @commands.has_permissions(manage_messages=True)
         async def bots (self, ctx):
                 def is_bot(m):
