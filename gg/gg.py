@@ -25,13 +25,12 @@ class GG(commands.Cog):
         @commands.command(aliases=['bots','bota'])
         @commands.has_permissions(manage_messages=True)
 	async def bot(self , ctx):
-	    channel=ctx.channel
-
-	    def is_bot(m):
-		return m.author.bot
-
-	    deleted = await channel.purge(limit=25, check=is_bot)
-	    await ctx.message.delete()
+		channel=ctx.channel
+		def is_bot(m):
+			return m.author.bot
+		
+		deleted = await channel.purge(limit=25, check=is_bot)
+		await ctx.message.delete()
 
 
 def setup(bot):
