@@ -2,7 +2,7 @@ import discord
 import discord.ext.commands as commands
 from discord.ext import tasks
 
-class Kartik(commands.Cog):
+class GG(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
 
@@ -35,4 +35,4 @@ class Kartik(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Kartik(bot))
+    bot.add_cog(GG(bot))
