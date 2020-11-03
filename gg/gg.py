@@ -7,7 +7,7 @@ class GG(commands.Cog):
                 self.bot = bot
 
         @tasks.loop(seconds=300)
-        async def serverstats():
+        async def serverstats(self):
             try :
                 guild = self.bot.get_guild(477929808022601739)
                 channel = self.bot.get_channel(773068370400641044)
@@ -19,12 +19,12 @@ class GG(commands.Cog):
                 
                 
         @serverstats.before_loop
-        async def before_serverstats():
+        async def before_serverstats(self):
             await self.bot.wait_until_ready()
 
         @commands.command(aliases=['bots','bota'])
         @commands.has_permissions(manage_messages=True)
-		async def bot(ctx):
+		async def bot(self , ctx):
 		    channel=ctx.channel
 
 		    def is_bot(m):
