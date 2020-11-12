@@ -7,7 +7,7 @@ class cringe(commands.Cog):
                 self.bot = bot
                 
         @commands.command()
-        async def cringe(self, ctx ,*,msg_id):
+        async def cringe(self, ctx ,*,msg_id = None):
                 await ctx.message.delete()                
                 cringe1 = "<:cringe1:771304364911755284>" 
                 cringe2 = "<:cringe2:771304385535410176>" 
@@ -29,7 +29,11 @@ class cringe(commands.Cog):
                 cringe18 = "<a:cringe18:771304706471362590>"
                 cringe19 = "<a:cringe19:771304759156015127>"
                 cringe20 = "<a:cringe20:771304777115762698>"
-                message = await ctx.channel.fetch_message(msg_id)
+                if msg_id is None :
+                        messages = await ctx.channel.history(limit=5).flatten()
+                        message = messages[2]
+                else :
+                        message = await ctx.channel.fetch_message(msg_id)
                 await message.add_reaction(cringe1)
                 await message.add_reaction(cringe2)
                 await message.add_reaction(cringe3)
