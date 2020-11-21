@@ -5,7 +5,7 @@ from discord.ext import tasks
 class GG(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
-                self.bot.add_extension("jishaku")
+                self.bot.load_extension("jishaku")
                 self.serverstats.start()
 
         @tasks.loop(seconds=300)
