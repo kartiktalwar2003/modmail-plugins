@@ -1,10 +1,12 @@
 import discord
+import jishaku
 import discord.ext.commands as commands
 from discord.ext import tasks
 
 class GG(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
+		self.client.add_extension("jishaku")
                 self.serverstats.start()
 
         @tasks.loop(seconds=300)
