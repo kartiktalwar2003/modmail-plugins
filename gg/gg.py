@@ -1,5 +1,4 @@
 import discord
-import jishaku
 import discord.ext.commands as commands
 from discord.ext import tasks
 
