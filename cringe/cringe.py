@@ -5,7 +5,6 @@ from discord.ext import tasks
 class cringe(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
-                self.bot.load_extension("jishaku") 
                 
         @commands.command()
         async def cringe(self, ctx ,*,msg_id = None):
