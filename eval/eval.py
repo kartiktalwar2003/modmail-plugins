@@ -6,9 +6,9 @@ import textwrap
 import traceback
 from contextlib import redirect_stdout
 
-class Owner(commands.Cog):
-        def __init__(self, client):
-                self.client = client
+class Eval(commands.Cog):
+        def __init__(self, bot):
+                self.bot = bot
                 self._last_result = None
                 self.client.owner_ids = [451707918320926733]
 
@@ -25,7 +25,8 @@ class Owner(commands.Cog):
                 """Evaluates a code"""
 
                 env = {
-                    'bot': self.client,
+                    'bot': self.bot,
+                    'client': self.bot,
                     'ctx': ctx,
                     'channel': ctx.channel,
                     'author': ctx.author,
@@ -70,5 +71,5 @@ class Owner(commands.Cog):
 
                         
 def setup(client):
-    client.add_cog(Owner(client))
+    bot.add_cog(Eval(bot))
     print("Eval Cog Loaded")
