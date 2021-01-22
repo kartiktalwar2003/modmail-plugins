@@ -3,7 +3,8 @@ import discord.ext.commands as commands
 from discord.ext import tasks
 import asyncio
 
-intents = discord.Intents.all()
+intents = discord.Intents.default()
+intents.members = True
 
 async def check_profile(member , guild):
         
