@@ -70,5 +70,5 @@ class eval(commands.Cog):
 
 
                         
-def setup(client):
+def setup(bot):
     bot.add_cog(eval(bot))
