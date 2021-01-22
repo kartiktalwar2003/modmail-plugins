@@ -107,7 +107,7 @@ class badgeroles(commands.Cog):
                 self.give_role.start()
                 self.activity_role.start()
 
-        @tasks.loop(seconds = 30)
+        @tasks.loop(seconds = 3)
         async def give_role(self):
                 guild = self.bot.get_guild(int(545956933170102283))
                 for member in guild.members :
