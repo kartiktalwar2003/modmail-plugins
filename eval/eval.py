@@ -10,7 +10,7 @@ class eval(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
                 self._last_result = None
-                self.client.owner_ids = [451707918320926733]
+                self.bot.owner_ids = [451707918320926733]
 
         def cleanup_code(self, content):
                 if content.startswith('```') and content.endswith('```'):
