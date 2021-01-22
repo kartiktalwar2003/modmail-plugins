@@ -72,4 +72,3 @@ class Eval(commands.Cog):
                         
 def setup(client):
     bot.add_cog(Eval(bot))
-    print("Eval Cog Loaded")
