@@ -3,6 +3,8 @@ import discord.ext.commands as commands
 from discord.ext import tasks
 import asyncio
 
+intents = discord.Intents.all()
+
 async def check_profile(member , guild):
         
         # Badge Roles
