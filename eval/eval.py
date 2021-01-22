@@ -6,7 +6,7 @@ import textwrap
 import traceback
 from contextlib import redirect_stdout
 
-class Eval(commands.Cog):
+class eval(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
                 self._last_result = None
@@ -71,4 +71,4 @@ class Eval(commands.Cog):
 
                         
 def setup(client):
-    bot.add_cog(Eval(bot))
+    bot.add_cog(eval(bot))
