@@ -17,6 +17,11 @@ async def check_profile(member , guild):
         early_supporter = discord.utils.get(guild.roles , name = "Discord Early Supporter")
         verified_bot_developer = discord.utils.get(guild.roles , name = "Discord Verified Developers")
 
+        # Bot Roles
+
+        verified_bot = discord.utils.get(guild.roles , name = "Discord Verified Bots")
+        unverified_bot = discord.utils.get(guild.roles , name = "Discord Unverified Developers")
+
         # Nitro Role
         nitro = discord.utils.get(guild.roles , name = "Discord Nitro")
 
@@ -84,6 +89,18 @@ async def check_profile(member , guild):
 
         if member.public_flags.verified_bot_developer is False and verified_bot_developer in member.roles :
                 await member.remove_roles(verified_bot_developer)
+
+        if member.public_flags.verified_bot :
+                await member.add_roles(verified_bot)
+
+        if member.public_flags.verified_bot is False and verified_bot in member.roles :
+                await member.remove_roles(verified_bot)
+
+        if member.public_flags.verified_bot is False and member.bot is True :
+                await member.add_roles(unverified_bot)
+
+        if member.public_flags.verified_bot is True and member.bot is True and unverified_bot in member.roles :
+                await member.remove_roles(unverified_bot)
 
         if member.is_avatar_animated() is True:
                 await member.add_roles(nitro)
