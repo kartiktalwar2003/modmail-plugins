@@ -20,7 +20,7 @@ async def check_profile(member , guild):
         # Bot Roles
 
         verified_bot = discord.utils.get(guild.roles , name = "Discord Verified Bots")
-        unverified_bot = discord.utils.get(guild.roles , name = "Discord Unverified Developers")
+        unverified_bot = discord.utils.get(guild.roles , name = "Discord Unverified Bots")
 
         # Nitro Role
         nitro = discord.utils.get(guild.roles , name = "Discord Nitro")
