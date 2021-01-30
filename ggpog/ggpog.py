@@ -32,32 +32,8 @@ class ggpog(commands.Cog):
 
                 except Exception as error :
                         raise error
-
-
-        @commands.command()
-        async def pog(self, ctx):
-                try :
-                        guild = ctx.guild
-                        pog_champ = guild.get_role(786300688866082886)
-                        print(pog_champ)
-
-                        mod_chat = guild.get_channel(746335357079126046)
-                        print(mod_chat)
-
-                        embed = discord.Embed(title = "Pog Champ has left the server!")
-                        embed.description = f"{ctx.author.mention} {ctx.author} has left the server."
-                        embed.timestamp = datetime.utcnow()
-
-                        if pog_champ in ctx.author.roles :
-                                await mod_chat.send(embed = embed)
-
-                        else :
-                                pass
-
-
-                except Exception as error :
-                        raise error
-
+                        
+                        
 
 def setup(bot):
     bot.add_cog(ggpog(bot))
