@@ -12,12 +12,9 @@ class ggpog(commands.Cog):
         async def on_member_remove(self, member):
                 try :
                         guild = self.bot.get_guild(477929808022601739)
-                        print(guild)
                         pog_champ = guild.get_role(786300688866082886)
-                        print(pog_champ)
 
                         mod_chat = guild.get_channel(746335357079126046)
-                        print(mod_chat)
 
                         embed = discord.Embed(title = "Pog Champ has left the server!")
                         embed.description = f"{member.mention} {member} has left the server."
