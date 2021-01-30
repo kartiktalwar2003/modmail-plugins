@@ -45,10 +45,10 @@ class ggpog(commands.Cog):
                         print(mod_chat)
 
                         embed = discord.Embed(title = "Pog Champ has left the server!")
-                        embed.description = f"{member.mention} {member} has left the server."
+                        embed.description = f"{ctx.author.mention} {ctx.author} has left the server."
                         embed.timestamp = datetime.utcnow()
 
-                        if pog_champ in member.roles :
+                        if pog_champ in ctx.author.roles :
                                 await mod_chat.send(embed = embed)
 
                         else :
