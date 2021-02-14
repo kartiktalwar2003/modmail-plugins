@@ -151,13 +151,13 @@ class badgeroles(commands.Cog):
                                                         if activity.type == discord.ActivityType.streaming and member.bot is False :
                                                                 await member.add_roles(streaming)
 
-                                                        if activity.type != discord.ActivityType.listening and spotify in member.roles and member.bot is False :
+                                                        if member.activity.type != discord.ActivityType.listening and spotify in member.roles and member.bot is False :
                                                                 await member.remove_roles(spotify)
 
-                                                        if activity.type != discord.ActivityType.playing and playing in member.roles and member.bot is False :
+                                                        if member.activity.type != discord.ActivityType.playing and playing in member.roles and member.bot is False :
                                                                 await member.remove_roles(playing)
 
-                                                        if activity.type != discord.ActivityType.streaming and streaming in member.roles and member.bot is False :
+                                                        if member.activity.type != discord.ActivityType.streaming and streaming in member.roles and member.bot is False :
                                                                 await member.remove_roles(streaming)
 
                                                         else :
