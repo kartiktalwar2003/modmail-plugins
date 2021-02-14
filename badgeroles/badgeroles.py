@@ -140,27 +140,28 @@ class badgeroles(commands.Cog):
                 for member in guild.members :
                         try :
                                 if member is not None :
-                                        if member.activity is not None :                                    
-                                                if member.activity.type == discord.ActivityType.listening and member.bot is False :
-                                                        await member.add_roles(spotify)
+                                        if member.activity is not None :
+                                                for activity in member.activities :
+                                                        if member.activity.type == discord.ActivityType.listening and member.bot is False :
+                                                                await member.add_roles(spotify)
 
-                                                if member.activity.type == discord.ActivityType.playing and member.bot is False :
-                                                        await member.add_roles(playing)
+                                                        if member.activity.type == discord.ActivityType.playing and member.bot is False :
+                                                                await member.add_roles(playing)
 
-                                                if member.activity.type == discord.ActivityType.streaming and member.bot is False :
-                                                        await member.add_roles(streaming)
+                                                        if member.activity.type == discord.ActivityType.streaming and member.bot is False :
+                                                                await member.add_roles(streaming)
 
-                                                if member.activity.type != discord.ActivityType.listening and spotify in member.roles and member.bot is False :
-                                                        await member.remove_roles(spotify)
+                                                        if member.activity.type != discord.ActivityType.listening and spotify in member.roles and member.bot is False :
+                                                                await member.remove_roles(spotify)
 
-                                                if member.activity.type != discord.ActivityType.playing and playing in member.roles and member.bot is False :
-                                                        await member.remove_roles(playing)
+                                                        if member.activity.type != discord.ActivityType.playing and playing in member.roles and member.bot is False :
+                                                                await member.remove_roles(playing)
 
-                                                if member.activity.type != discord.ActivityType.streaming and streaming in member.roles and member.bot is False :
-                                                        await member.remove_roles(streaming)
+                                                        if member.activity.type != discord.ActivityType.streaming and streaming in member.roles and member.bot is False :
+                                                                await member.remove_roles(streaming)
 
-                                                else :
-                                                        pass
+                                                        else :
+                                                                pass
 
                                         if member.activity is None :
                                                 if spotify in member.roles :
