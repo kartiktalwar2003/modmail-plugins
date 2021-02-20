@@ -159,35 +159,35 @@ class badgeroles(commands.Cog):
                                                         elif len(activity.type) == 2 and activity.type == discord.ActivityType.listening and member.bot is False :
                                                                 await member.add_roles(spotify)
 
-                                                        if len(activity.type) == 2 and activity.type == discord.ActivityType.playing and member.bot is False :
+                                                        elif len(activity.type) == 2 and activity.type == discord.ActivityType.playing and member.bot is False :
                                                                 await member.add_roles(playing)
 
-                                                        if len(activity.type) == 2 and activity.type == discord.ActivityType.streaming and member.bot is False :
+                                                        elif len(activity.type) == 2 and activity.type == discord.ActivityType.streaming and member.bot is False :
                                                                 await member.add_roles(streaming)
 
-                                                        if len(activity.type) == 1 and activity.type != discord.ActivityType.playing and playing in member.roles and member.bot is False :
+                                                        elif len(activity.type) == 1 and activity.type != discord.ActivityType.playing and playing in member.roles and member.bot is False :
                                                                 await member.remove_roles(playing)
 
-                                                        if len(activity.type) == 1 and activity.type != discord.ActivityType.playing and coding in member.roles and member.bot is False :
+                                                        elif len(activity.type) == 1 and activity.type != discord.ActivityType.playing and coding in member.roles and member.bot is False :
                                                                 await member.remove_roles(coding)
 
-                                                        if len(activity.type) == 1 and activity.type != discord.ActivityType.listening and spotify in member.roles and member.bot is False :
+                                                        elif len(activity.type) == 1 and activity.type != discord.ActivityType.listening and spotify in member.roles and member.bot is False :
                                                                 await member.remove_roles(spotify)
 
-                                                        if len(activity.type) == 1 and activity.type != discord.ActivityType.streaming and streaming in member.roles and member.bot is False :
+                                                        elif len(activity.type) == 1 and activity.type != discord.ActivityType.streaming and streaming in member.roles and member.bot is False :
                                                                 await member.remove_roles(streaming)
 
                                         if member.activity is None :
                                                 if spotify in member.roles :
                                                         await member.remove_roles(spotify)
 
-                                                if playing in member.roles :
+                                                elif playing in member.roles :
                                                         await member.remove_roles(playing)                                        
 
-                                                if streaming in member.roles :
+                                                elif streaming in member.roles :
                                                         await member.remove_roles(streaming)
 
-                                                if coding in member.roles :
+                                                elif coding in member.roles :
                                                         await member.remove_roles(coding)
 
                                                 
