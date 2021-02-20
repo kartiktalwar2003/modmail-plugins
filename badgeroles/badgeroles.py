@@ -147,9 +147,11 @@ class badgeroles(commands.Cog):
                                                         if len(activity.type) == 2 and activity.type == discord.ActivityType.playing and member.bot is False :
                                                                 if str(activity.name).startswith("Visual") or str(activity.name).startswith("Sublime") or str(activity.name).startswith("Atom") or str(activity.name).startswith("Py") :
                                                                         await member.add_roles(coding)
+                                                                        print(f"Upper {member}")
 
                                                                 else :
                                                                         try :
+                                                                                print(member)
                                                                         	await member.remove_roles(coding)
                                                                         except :
                                                                                 pass
