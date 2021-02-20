@@ -144,7 +144,7 @@ class badgeroles(commands.Cog):
                                 if member is not None :
                                         if member.activity is not None :
                                                 for activity in member.activities :
-                                                        if activity.type == discord.ActivityType.playing :
+                                                        if activity.type == discord.ActivityType.playing and member.bot is False :
                                                                 if str(activity.name).startswith("Visual") or str(activity.name).startswith("Sublime") or str(activity.name).startswith("Atom") or str(activity.name).startswith("Py") :
                                                                         await member.add_roles(coding)
 
