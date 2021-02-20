@@ -201,7 +201,7 @@ class badgeroles(commands.Cog):
 
                                         
                         except :
-                        	pass
+                        	return
 
 
         @activity_role.before_loop
