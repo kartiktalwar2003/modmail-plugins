@@ -144,7 +144,7 @@ class badgeroles(commands.Cog):
                                 if member is not None :
                                         if member.activity is not None :
                                                 for activity in member.activities :
-                                                        if len(activity.type) > 1 and activity.type == discord.ActivityType.playing and member.bot is False :
+                                                        if len(activity.type) == 2 and activity.type == discord.ActivityType.playing and member.bot is False :
                                                                 if str(activity.name).startswith("Visual") or str(activity.name).startswith("Sublime") or str(activity.name).startswith("Atom") or str(activity.name).startswith("Py") :
                                                                         await member.add_roles(coding)
 
@@ -155,13 +155,13 @@ class badgeroles(commands.Cog):
                                                                                 pass
                                                                         
 
-                                                        if len(activity.type) > 1 and activity.type == discord.ActivityType.listening and member.bot is False :
+                                                        elif len(activity.type) == 2 and activity.type == discord.ActivityType.listening and member.bot is False :
                                                                 await member.add_roles(spotify)
 
-                                                        if len(activity.type) > 1 and activity.type == discord.ActivityType.playing and member.bot is False :
+                                                        if len(activity.type) == 2 and activity.type == discord.ActivityType.playing and member.bot is False :
                                                                 await member.add_roles(playing)
 
-                                                        if len(activity.type) > 1 and activity.type == discord.ActivityType.streaming and member.bot is False :
+                                                        if len(activity.type) == 2 and activity.type == discord.ActivityType.streaming and member.bot is False :
                                                                 await member.add_roles(streaming)
 
                                                         if len(activity.type) == 1 and activity.type != discord.ActivityType.playing and playing in member.roles and member.bot is False :
