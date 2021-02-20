@@ -151,7 +151,6 @@ class badgeroles(commands.Cog):
                                                                 else :
                                                                         try :
                                                                         	await member.remove_roles(coding)
-                                                                        	await member.add_roles(playing)
                                                                         except :
                                                                                 pass
                                                                         
