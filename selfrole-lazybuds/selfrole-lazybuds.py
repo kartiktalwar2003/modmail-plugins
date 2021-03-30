@@ -12,7 +12,7 @@ class SelfroleLazyBuds(commands.Cog):
                         guild = self.bot.get_guild(payload.guild_id)
                         member = payload.member
                         
-                        print(payload.emoji.name)
+                        print(payload.emoji)
                         
                         if str(payload.emoji.name) == "<:helpers:826419456401342494>" :
                                 print(payload.emoji.name)
