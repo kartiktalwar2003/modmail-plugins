@@ -3,13 +3,13 @@ import discord.ext.commands as commands
 
 
 class SelfroleLazyBuds(commands.Cog):
-        def __init__(self, client):
-                self.client = client
+        def __init__(self, bot):
+                self.bot = bot
 
         @commands.Cog.listener()
         async def on_raw_reaction_add(self, payload):
                 if payload.message_id == 826422797956939786 :
-                        guild = self.client.get_guild(payload.guild_id)
+                        guild = self.bot.get_guild(payload.guild_id)
                         member = payload.member
                         if guild is None :
                                 return
@@ -39,7 +39,7 @@ class SelfroleLazyBuds(commands.Cog):
         @commands.Cog.listener()
         async def on_raw_reaction_remove(self, payload):
                 if payload.message_id == 826422797956939786 :
-                        guild = self.client.get_guild(payload.guild_id)
+                        guild = self.bot.get_guild(payload.guild_id)
                         member = payload.member
                         if guild is None :
                                 return
@@ -68,5 +68,5 @@ class SelfroleLazyBuds(commands.Cog):
                             
                     
                         
-def setup(client):
-    client.add_cog(SelfroleLazyBuds(client))
+def setup(bot):
+    bot.add_cog(SelfroleLazyBuds(bot))
