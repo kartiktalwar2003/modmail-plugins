@@ -15,6 +15,7 @@ class activityroles(commands.Cog):
         async def playing_role(self):
                 guild = self.bot.get_guild(int(545956933170102283))
                 playing = discord.utils.get(guild.roles , name = "Playing Game")
+                coding = discord.utils.get(guild.roles , name = "Currently Coding")
                 
                 for member in guild.members :
                         try :
@@ -22,7 +23,8 @@ class activityroles(commands.Cog):
                                         if member.activity is not None :
                                                 for activity in member.activities :
                                                         if len(activity.type) >= 2 and activity.type == discord.ActivityType.playing and member.bot is False :
-                                                                await member.add_roles(playing)
+                                                                if coding not in member.role :
+                                                                        await member.add_roles(playing)
 
                                                         elif len(activity.type) == 1 and activity.type != discord.ActivityType.playing and playing in member.roles and member.bot is False :
                                                                 await member.remove_roles(playing)
