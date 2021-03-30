@@ -38,7 +38,7 @@ class SelfroleLazyBuds(commands.Cog):
         async def on_raw_reaction_remove(self, payload):
                 if payload.message_id == 826422797956939786 :
                         guild = self.bot.get_guild(payload.guild_id)
-                        member = self.bot.get_user(payload.user_id)
+                        member = guild.get_member(payload.user_id)
                         
                         if str(payload.emoji) == "<:helpers:826419456401342494>" :
                                 helper_role = guild.get_role(741821329245995070)
