@@ -11,14 +11,16 @@ class SelfroleLazyBuds(commands.Cog):
                 if payload.message_id == 826422797956939786 :
                         guild = self.bot.get_guild(payload.guild_id)
                         member = payload.member
-                        print(guild)
-                        print(member)
                         
                         if str(payload.emoji.name) == "<:helpers:826419456401342494>" :
+                                print(payload.emoji.name)
                                 helper_role = guild.get_role(741821329245995070)
+                                print(helper_role)
 
                                 await member.add_roles(helper_role)
+                                print("ADDED")
                                 channel = guild.get_channel(payload.channel_id)
+                                print(channel)
                                 await channel.send(f"<:helpers:826419456401342494> Gave you {helper_role.name} role.", delete_after = 3)
 
                         if str(payload.emoji.name) == "<:karuta:826418982969278514>" :
