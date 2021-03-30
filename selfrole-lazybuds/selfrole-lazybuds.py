@@ -11,9 +11,8 @@ class SelfroleLazyBuds(commands.Cog):
                 if payload.message_id == 826422797956939786 :
                         guild = self.bot.get_guild(payload.guild_id)
                         member = payload.member
-                        if guild is None :
-                                print(guild)
-                                return
+                        print(guild)
+                        print(member)
                         
                         if str(payload.emoji.name) == "<:helpers:826419456401342494>" :
                                 helper_role = guild.get_role(741821329245995070)
