@@ -17,28 +17,28 @@ class SelfroleLazyBuds(commands.Cog):
 
                                 await member.add_roles(helper_role)
                                 channel = guild.get_channel(payload.channel_id)
-                                await channel.send(f"<:helpers:826419456401342494> Gave you {helper_role.name} role.", delete_after = 3)
+                                await channel.send(f"<:helpers:826419456401342494> Gave {member.mention} {helper_role.name} role.", delete_after = 3)
 
                         if str(payload.emoji) == "<:karuta:826418982969278514>" :
                                 karuta_role = guild.get_role(826429583543762954)
 
                                 await member.add_roles(karuta_role)
                                 channel = guild.get_channel(payload.channel_id)
-                                await channel.send(f"<:karuta:826418982969278514> Gave you {karuta_role.name} role.", delete_after = 3)
+                                await channel.send(f"<:karuta:826418982969278514> Gave {member.mention} {karuta_role.name} role.", delete_after = 3)
 
                         if str(payload.emoji) == "<:shoob:826417788540944394>" :
                                 shoob_role = guild.get_role(826430267572748308)
 
                                 await member.add_roles(shoob_role)
                                 channel = guild.get_channel(payload.channel_id)
-                                await channel.send(f"<:shoob:826417788540944394> Gave you {shoob_role.name} role.", delete_after = 3)
+                                await channel.send(f"<:shoob:826417788540944394> Gave {member.mention} {shoob_role.name} role.", delete_after = 3)
 
 
         @commands.Cog.listener()
         async def on_raw_reaction_remove(self, payload):
                 if payload.message_id == 826422797956939786 :
                         guild = self.bot.get_guild(payload.guild_id)
-                        member = payload.member
+                        member = self.bot.get_user(payload.user_id)
                         
                         if str(payload.emoji) == "<:helpers:826419456401342494>" :
                                 helper_role = guild.get_role(741821329245995070)
