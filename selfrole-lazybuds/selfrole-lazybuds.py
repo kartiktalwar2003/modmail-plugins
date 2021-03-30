@@ -8,12 +8,11 @@ class SelfroleLazyBuds(commands.Cog):
 
         @commands.Cog.listener()
         async def on_raw_reaction_add(self, payload):
-                print(payload.member)
                 if payload.message_id == 826422797956939786 :
-                        print(payload.message_id)
                         guild = self.bot.get_guild(payload.guild_id)
                         member = payload.member
                         if guild is None :
+                                print(guild)
                                 return
                         
                         if str(payload.emoji.name) == "<:helpers:826419456401342494>" :
