@@ -67,10 +67,7 @@ class activityroles(commands.Cog):
                                                                         await member.add_roles(coding)
 
                                                                 else :
-                                                                        try :
-                                                                        	await member.remove_roles(coding)
-                                                                        except :
-                                                                                pass
+                                                                        await member.remove_roles(coding)
                                                                         
 
                                                         elif len(activity.type) >= 1 and activity.type != discord.ActivityType.playing and coding in member.roles and member.bot is False :
