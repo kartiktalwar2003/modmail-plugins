@@ -61,6 +61,18 @@ class SelfroleLazyBuds(commands.Cog):
                                 channel = guild.get_channel(payload.channel_id)
                                 await channel.send(f"<:shoob:826417788540944394> Removed you're {shoob_role.name} role {member.mention}.", delete_after = 3)
 
+	@commands.command()
+	async def card(self, ctx, message_id = None) :
+		if message_id is None :
+			command_msg = ctx.message
+			karuta_msg = await ctx.channel.fetch_message(command_msg.reference.message_id)
+			embed = karuta_msg.embeds[0]
+			await ctx.send(f"`+showcase add slot {embed.image.url}`")
+		else :
+			karuta_msg = await ctx.channel.fetch_message(message_id)
+			embed = karuta_msg.embeds[0]
+			await ctx.send(f"`+showcase add slot {embed.image.url}`")
+
                             
                     
                         
