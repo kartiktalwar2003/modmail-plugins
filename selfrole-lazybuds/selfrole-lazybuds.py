@@ -6,7 +6,7 @@ class SelfroleLazyBuds(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
 
-	@commands.command()
+	@commands.command(name = "card")
 	async def card(self, ctx, message_id = None) :
 		if message_id is None :
 			command_msg = ctx.message
