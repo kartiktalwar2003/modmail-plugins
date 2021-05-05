@@ -6,6 +6,19 @@ class SelfroleLazyBuds(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
 
+	@commands.command()
+	async def card(self, ctx, message_id = None) :
+		if message_id is None :
+			command_msg = ctx.message
+			karuta_msg = await ctx.channel.fetch_message(command_msg.reference.message_id)
+			embed = karuta_msg.embeds[0]
+			await ctx.send(f"`+showcase add slot {embed.image.url}`")
+		else :
+			karuta_msg = await ctx.channel.fetch_message(message_id)
+			embed = karuta_msg.embeds[0]
+			await ctx.send(f"`+showcase add slot {embed.image.url}`")
+
+
         @commands.Cog.listener()
         async def on_raw_reaction_add(self, payload):
                 if payload.message_id == 826422797956939786 :
@@ -59,21 +72,7 @@ class SelfroleLazyBuds(commands.Cog):
 
                                 await member.remove_roles(shoob_role)
                                 channel = guild.get_channel(payload.channel_id)
-                                await channel.send(f"<:shoob:826417788540944394> Removed you're {shoob_role.name} role {member.mention}.", delete_after = 3)
-
-	@commands.command()
-	async def card(self, ctx, message_id = None) :
-		if message_id is None :
-			command_msg = ctx.message
-			karuta_msg = await ctx.channel.fetch_message(command_msg.reference.message_id)
-			embed = karuta_msg.embeds[0]
-			await ctx.send(f"`+showcase add slot {embed.image.url}`")
-		else :
-			karuta_msg = await ctx.channel.fetch_message(message_id)
-			embed = karuta_msg.embeds[0]
-			await ctx.send(f"`+showcase add slot {embed.image.url}`")
-
-                            
+                                await channel.send(f"<:shoob:826417788540944394> Removed you're {shoob_role.name} role {member.mention}.", delete_after = 3)                         
                     
                         
 def setup(bot):
