@@ -17,7 +17,7 @@ Enjoy chatting in <#734735695138258954>\n\
 Thank you")
             embed.set_footer(text="Designed by Harshit#0001")
             avatar = member.avatar_url
-            embed.set_image(url=avatar)
+            embed.set_thumbnail(url=avatar)
             
             msg = await channel.send(content=f"{member.mention}", embed=embed)
             await asyncio.sleep(40)
