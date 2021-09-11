@@ -7,7 +7,7 @@ class Snax(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
 
-        @commands.listener()
+        @commands.Cog.listener()
         async def on_member_join(self, member):
             channel = self.bot.get_channel(734735695138258954)
 
