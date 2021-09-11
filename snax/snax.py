@@ -11,7 +11,7 @@ class Snax(commands.Cog):
         async def on_member_join(self, member):
             channel = self.bot.get_channel(734735695138258954)
 
-            embed = discord.Embed(title="**Welcome to **{channel.guild.name}**", color = discord.Color.random(), description=f"Hey {member.mention} hope you enjoy here!!\n\
+            embed = discord.Embed(title=f"**Welcome to **{channel.guild.name}**", color = discord.Color.random(), description=f"Hey {member.mention} hope you enjoy here!!\n\
 Check out <#733947076412571680>\n\
 Enjoy chatting in <#734735695138258954>\n\
 Thank you")
