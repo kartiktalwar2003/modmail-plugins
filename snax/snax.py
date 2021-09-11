@@ -20,7 +20,7 @@ Thank you")
             embed.set_image(url=avatar)
             
             msg = await channel.send(content=f"{member.mention}", embed=embed)
-            asyncio.sleep(40)
+            await asyncio.sleep(40)
             await msg.delete()
 
 
