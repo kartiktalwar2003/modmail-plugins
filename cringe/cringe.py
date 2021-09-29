@@ -30,8 +30,8 @@ class cringe(commands.Cog):
                 cringe19 = "<a:cringe19:771304759156015127>"
                 cringe20 = "<a:cringe20:771304777115762698>"
                 if msg_id is None :
-                        messages = await ctx.channel.history(limit=5).flatten()
-                        message = messages[2]
+                        command_msg = ctx.message
+                        message = await ctx.channel.fetch_message(command_msg.reference.message_id)
                 else :
                         message = await ctx.channel.fetch_message(msg_id)
                 await message.add_reaction(cringe1)
