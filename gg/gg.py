@@ -22,7 +22,7 @@ class GG(commands.Cog):
                         if extractor.has_urls(message.content):
                                 pass
                         else :
-                                await message.reply("Only links are allowed in this channel.", delete_after=5)
+                                await message.channel.send(f"{message.author.mention} only playlist links are allowed in this channel.", delete_after=5)
                                 await message.delete()
 
                 else :
