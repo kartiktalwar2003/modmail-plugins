@@ -13,6 +13,22 @@ class GG(commands.Cog):
                         return m.author.bot
                 deleted = await ctx.channel.purge(limit = 50 , check = is_bot)
                 await ctx.message.delete()
+                
+        @commands.Cog.listener()
+        async def on_message(self, message):
+                if str(message.channel.id) == "894148486554079232" :
+                        extractor = URLExtract()
+                        if extractor.has_urls(message):
+                                pass
+                        else :
+                                await message.reply("Only links are allowed in this channel.", delete_after=5)
+                                await message.delete()
+
+                else :
+                        pass
+                
+                await bot.process_commands(message)
+                
 
 def setup(bot):
     bot.add_cog(GG(bot))
