@@ -1,6 +1,7 @@
 import discord
 import discord.ext.commands as commands
 from discord.ext import tasks
+from urlextract import URLExtract
 
 class GG(commands.Cog):
         def __init__(self, bot):
