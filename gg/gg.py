@@ -28,7 +28,6 @@ class GG(commands.Cog):
                 else :
                         pass
                 
-                await self.bot.process_commands(message)
                 
 
 def setup(bot):
