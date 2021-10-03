@@ -19,7 +19,7 @@ class GG(commands.Cog):
         async def on_message(self, message):
                 if str(message.channel.id) == "894148486554079232" :
                         extractor = URLExtract()
-                        if extractor.has_urls(message):
+                        if extractor.has_urls(message.content):
                                 pass
                         else :
                                 await message.reply("Only links are allowed in this channel.", delete_after=5)
