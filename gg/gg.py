@@ -17,16 +17,19 @@ class GG(commands.Cog):
                 
         @commands.Cog.listener()
         async def on_message(self, message):
-                if str(message.channel.id) == "894148486554079232" :
-                        extractor = URLExtract()
-                        if extractor.has_urls(message.content):
-                                pass
-                        else :
-                                await message.channel.send(f"{message.author.mention} only playlist links are allowed in this channel.", delete_after=5)
-                                await message.delete()
+		if message.author.bot is True :
+			pass
+		else :
+               		if str(message.channel.id) == "894148486554079232" :
+                       		extractor = URLExtract()
+                       		if extractor.has_urls(message.content):
+                               		pass
+                       		else :
+                               		await message.channel.send(f"{message.author.mention} only playlist links are allowed in this channel.", delete_after=5)
+                               		await message.delete()
 
-                else :
-                        pass
+               		else :
+                       		pass
                 
                 
 
