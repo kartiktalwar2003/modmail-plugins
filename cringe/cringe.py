@@ -6,6 +6,57 @@ class cringe(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
                 
+        
+        @commands.command(aliases=["hehe","joy","hqhq","lol"])
+        async def haha(self, ctx ,*,msg_id = None):
+                await ctx.message.delete()
+                emote1 = "🔥" 
+                emote2 = "<:hehe:825292396334022688>"
+                emote3 = "😂"
+                emote4 = "💯"
+                emote5 = "🤞"
+                emote6 = "😹"
+                emote7 = "<:hahaprateek:786330205865639967>"
+                emote8 = "💀"
+                emote9 = "<:CoolChamp:826402171112390667>"
+                emote10 = "🤣"
+                emote11 = "<:chupmadarchod:701780539195261008>"
+                emote12 = "<:heheh:798443439128576000>"
+                emote13 = "<:hahakomedi:792417780154368020>"
+                emote14 = "<:ruineverything:831588564629192745>"
+                emote15 = "<:LafdaPopcorn:794542953086451732>"
+                emote16 = "<:comedy:769871182773092362>"
+                emote17 = "<:bruh:816252917748465695>"
+                emote18 = "🤷"
+                emote19 = "<:terimaarandi:806603231114821693>"
+                emote20 = "<:roflxd:895596018446516284>"
+                
+                if msg_id is None :
+                        command_msg = ctx.message
+                        message = await ctx.channel.fetch_message(command_msg.reference.message_id)
+                else :
+                        message = await ctx.channel.fetch_message(msg_id)
+                await message.add_reaction(emote1)
+                await message.add_reaction(emote2)
+                await message.add_reaction(emote3)
+                await message.add_reaction(emote4)
+                await message.add_reaction(emote5)
+                await message.add_reaction(emote6)
+                await message.add_reaction(emote7)
+                await message.add_reaction(emote8)
+                await message.add_reaction(emote9)
+                await message.add_reaction(emote10)
+                await message.add_reaction(emote11)
+                await message.add_reaction(emote12)
+                await message.add_reaction(emote13)
+                await message.add_reaction(emote14)
+                await message.add_reaction(emote15)
+                await message.add_reaction(emote16)
+                await message.add_reaction(emote17)
+                await message.add_reaction(emote18)
+                await message.add_reaction(emote19)
+                await message.add_reaction(emote20)
+                
         @commands.command()
         async def cringe(self, ctx ,*,msg_id = None):
                 await ctx.message.delete()                
