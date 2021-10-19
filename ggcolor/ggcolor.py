@@ -5,6 +5,7 @@ from discord.ext import tasks
 class GGcolor(commands.Cog):
         def __init__(self, bot):
                 self.bot = bot
+                self.change_color.start()
 
         @tasks.loop(seconds=3600)
         async def change_color():
