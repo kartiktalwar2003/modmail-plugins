@@ -12,7 +12,7 @@ class GGcolor(commands.Cog):
         async def change_color(self):
             try :
                 guild = self.bot.get_guild(477929808022601739)
-                channel = guild.get_role(900013276799307807)
+                role = guild.get_role(900013276799307807)
                 await role.edit(color=discord.Color(random.randint(0x000000, 0xFFFFFF)))
 
             except Exception as error :
