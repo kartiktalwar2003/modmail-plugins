@@ -11,7 +11,7 @@ class GGcolor(commands.Cog):
         @tasks.loop(seconds=3600)
         async def change_color():
             try :
-                guild = self.bot.get_guild(704217816940675072)
+                guild = self.bot.get_guild(477929808022601739)
                 channel = guild.get_role(900013276799307807)
                 await role.edit(color=discord.Color(random.randint(0x000000, 0xFFFFFF)))
 
