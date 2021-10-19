@@ -9,7 +9,7 @@ class GGcolor(commands.Cog):
                 self.change_color.start()
 
         @tasks.loop(seconds=3600)
-        async def change_color():
+        async def change_color(self):
             try :
                 guild = self.bot.get_guild(477929808022601739)
                 channel = await guild.get_role(900013276799307807)
@@ -20,7 +20,7 @@ class GGcolor(commands.Cog):
 
 
         @change_color.before_loop
-        async def before_change_color():
+        async def before_change_color(self):
             await self.bot.wait_until_ready()
 
 
