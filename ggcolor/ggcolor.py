@@ -1,6 +1,7 @@
 import discord
 import discord.ext.commands as commands
 from discord.ext import tasks
+import random
 
 class GGcolor(commands.Cog):
         def __init__(self, bot):
