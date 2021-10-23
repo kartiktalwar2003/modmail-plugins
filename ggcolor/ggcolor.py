@@ -8,7 +8,7 @@ class GGcolor(commands.Cog):
                 self.bot = bot
                 self.change_color.start()
 
-        @tasks.loop(seconds=3600)
+        @tasks.loop(hours=12)
         async def change_color(self):
             try :
                 guild = self.bot.get_guild(477929808022601739)
