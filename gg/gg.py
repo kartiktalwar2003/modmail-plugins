@@ -30,7 +30,7 @@ class GG(commands.Cog):
 					
                         if str(message.content).lower().startswith("nnn") :
                             nnn_role = message.guild.get_role(904447750970699868)
-                            if nnn_role in message.member.roles :
+                            if nnn_role in message.author.roles :
                                 try :
                                     await message.author.remove_roles(nnn_role)
                                     await message.add_reaction("\U0000274e")
