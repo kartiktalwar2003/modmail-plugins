@@ -34,6 +34,7 @@ class GG(commands.Cog):
                                 try :
                                     await message.author.remove_roles(nnn_role)
                                     await message.add_reaction("\U0000274e")
+				    await message.reply("Congrats comrade, you are a warrior. Gajju welcomes you to the NNN gang. Remember, no jerking off for the whole November, if you do you're a weakling.")
                                 except :
                                     pass
 
