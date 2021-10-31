@@ -34,7 +34,7 @@ class GG(commands.Cog):
                                 await message.author.add_roles(nnn_role)
                                 await message.add_reaction("\U00002705")
                             except :
-                                pass
+                                await message.author.remove_roles(nnn_role)
                 
                         else :
                             pass
