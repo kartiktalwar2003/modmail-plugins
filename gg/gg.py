@@ -28,7 +28,7 @@ class GG(commands.Cog):
                                         await message.channel.send(f"{message.author.mention} only playlist links are allowed in this channel.", delete_after=5)
                                         await message.delete()
 					
-                        if str(message.content).lower().startswith("nnn") :
+                        if str(message.content).lower() == "nnn" :
                             nnn_role = message.guild.get_role(904447750970699868)
                             if nnn_role in message.author.roles :
                                 try :
