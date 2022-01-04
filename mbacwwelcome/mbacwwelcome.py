@@ -24,7 +24,7 @@ class MBACWWelcome(commands.Cog):
                     draw.ellipse((0, 0) + avatar.size, fill=255)
                     output = ImageOps.fit(avatar, mask.size, centering=(0.5, 0.5))
                     output.putalpha(mask)
-                    base = Image.open("Welcome.png")
+                    base = Image.open("./Welcome.png")
                     base.paste(output,(408, 50), output)
 
                     myFont = ImageFont.truetype("welcome.ttf", 80)
