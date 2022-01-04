@@ -24,10 +24,10 @@ class MBACWWelcome(commands.Cog):
                     draw.ellipse((0, 0) + avatar.size, fill=255)
                     output = ImageOps.fit(avatar, mask.size, centering=(0.5, 0.5))
                     output.putalpha(mask)
-                    base = Image.open("images/Welcome.png")
+                    base = Image.open("Welcome.png")
                     base.paste(output,(408, 50), output)
 
-                    myFont = ImageFont.truetype("fonts/welcome.ttf", 80)
+                    myFont = ImageFont.truetype("welcome.ttf", 80)
                     W, H = (1024,500)
                     welcome = f"WELCOME {member}"
                     msg = f"Now we've {member.guild.member_count} members"
@@ -36,9 +36,9 @@ class MBACWWelcome(commands.Cog):
                     draw.text(((W-w)/2, 300), welcome, fill="hotpink", font=myFont)
                     w, h = draw.textsize(msg, font=myFont)
                     draw.text(((W-w)/2, 390), msg, fill="black", font=myFont)
-                    base.save("images/card.png")
+                    base.save("card.png")
                 
-                file = discord.File("images/card.png", filename="card.png")
+                file = discord.File("card.png", filename="card.png")
                 await channel.send(file = file)
 
                         
