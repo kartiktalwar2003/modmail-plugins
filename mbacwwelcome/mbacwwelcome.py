@@ -24,10 +24,10 @@ class MBACWWelcome(commands.Cog):
                     draw.ellipse((0, 0) + avatar.size, fill=255)
                     output = ImageOps.fit(avatar, mask.size, centering=(0.5, 0.5))
                     output.putalpha(mask)
-                    base = Image.open("./Welcome.png")
+                    base = Image.open("/app/plugins/kartiktalwar2003/modmail-plugins/mbacwwelcome-main/Welcome.png")
                     base.paste(output,(408, 50), output)
 
-                    myFont = ImageFont.truetype("welcome.ttf", 80)
+                    myFont = ImageFont.truetype("/app/plugins/kartiktalwar2003/modmail-plugins/mbacwwelcome-main/welcome.ttf", 80)
                     W, H = (1024,500)
                     welcome = f"WELCOME {member}"
                     msg = f"Now we've {member.guild.member_count} members"
