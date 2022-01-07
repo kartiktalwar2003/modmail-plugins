@@ -40,7 +40,7 @@ class MBACWWelcome(commands.Cog):
                         base.save("card.png")
                     
                     file = discord.File("card.png", filename="card.png")
-                    await channel.send(file = file)
+                    await channel.send(content = f"Welcome {member.mention} have a Kadak Masaledar Chai while you're here!" , file = file)
             
             else :
                 return
