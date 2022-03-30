@@ -23,6 +23,7 @@ class TTS(commands.Cog):
             if connected_voice is None:
                 speak_perms = author_channel.channel.permissions_for(ctx.guild.me).speak
                 connect_perms = author_channel.channel.permissions_for(ctx.guild.me).connect
+                await author_channel.channel.connect()
                 print("First IF")
                 
                 if connect_perms and speak_perms is True:
