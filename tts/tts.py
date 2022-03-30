@@ -33,6 +33,9 @@ class TTS(commands.Cog):
                 elif connect_perms or speak_perms is False:
                     print("Third IF")
                     return await ctx.reply(f"Make sure I've enough permissions in the {author_channel.channel.mention} to connect and speak.", mention_author=False)
+                
+                else :
+                    print("Else")
 
         except:
             pass
