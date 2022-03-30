@@ -17,6 +17,7 @@ class TTS(commands.Cog):
         try:
             author_channel = ctx.message.author.voice
             connected_voice = ctx.guild.voice_client
+            print(connected_voice)
             
             if connected_voice is None:
                 print("IF")
