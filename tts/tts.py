@@ -39,7 +39,6 @@ class TTS(commands.Cog):
         print(audio)
         vc = ctx.voice_client
         print(vc)
-        print(ffmpeg)
         vc.play(discord.FFmpegPCMAudio(executable=r"ffmpeg", source=audio))
 
 def setup(bot):
