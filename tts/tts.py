@@ -29,7 +29,7 @@ class TTS(commands.Cog):
                         await author_channel.channel.connect()
                         print("Connected")
                     except Exception as e:
-                        print(e)
+                        raise e
                     await ctx.reply(f"Joined {author_channel.channel.mention}", mention_author=False)
                     
                 elif connect_perms or speak_perms is False:
