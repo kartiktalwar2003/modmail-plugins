@@ -5,7 +5,7 @@ from gtts import gTTS
 
 def create_audio(text, lang, speed, guild: discord.Guild):
     speech = gTTS(text=text, lang=lang, slow=speed)
-    return speech.save(f"tts/{str(guild)+'tts.mp3'}")
+    return speech.save(f"audio/{str(guild)+'tts.mp3'}")
 
 class TTS(commands.Cog):
     def __init__(self, bot):
@@ -34,7 +34,7 @@ class TTS(commands.Cog):
         lang = "hi"
         create_audio(text=text, lang=lang, speed=False, guild=ctx.guild.id)
         file = str(str(ctx.guild.id) + "tts.mp3")
-        audio = f"tts/{file}"
+        audio = f"audio/{file}"
         vc = ctx.voice_client
         vc.play(discord.FFmpegPCMAudio(executable=r"ffmpeg", source=audio))
 
