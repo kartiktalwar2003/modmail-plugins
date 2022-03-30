@@ -25,8 +25,8 @@ class TTS(commands.Cog):
                 print(connect_perms)
                 try:
                     await author_channel.channel.connect()
-                except:
-                    print("Except")
+                except Exception as e:
+                    raise e
                 print("First IF")
                 
                 if connect_perms and speak_perms is True:
