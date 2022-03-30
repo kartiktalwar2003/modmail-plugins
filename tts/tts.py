@@ -32,7 +32,7 @@ class TTS(commands.Cog):
                         print(e)
                     await ctx.reply(f"Joined {author_channel.channel.mention}", mention_author=False)
                     
-                if connect_perms or speak_perms is False:
+                elif connect_perms or speak_perms is False:
                     print("ELIF")
                     return await ctx.reply(f"Make sure I've enough permissions in the {author_channel.channel.mention} to connect and speak.", mention_author=False)
                     
