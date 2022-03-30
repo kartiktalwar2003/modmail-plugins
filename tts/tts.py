@@ -17,6 +17,8 @@ class TTS(commands.Cog):
         try:
             author_channel = ctx.message.author.voice
             connected_voice = ctx.guild.voice_client
+            print(author_channel)
+            print(connected_voice)
 
             if connected_voice is None:
                 speak_perms = author_channel.channel.permissions_for(ctx.guild.me).speak
