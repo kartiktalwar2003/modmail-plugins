@@ -22,7 +22,6 @@ class TTS(commands.Cog):
                 print("IF")
                 speak_perms = author_channel.channel.permissions_for(ctx.guild.me).speak
                 connect_perms = author_channel.channel.permissions_for(ctx.guild.me).connect
-                await author_channel.channel.connect()
                 
                 if connect_perms and speak_perms is True:
                     print("elIF")
