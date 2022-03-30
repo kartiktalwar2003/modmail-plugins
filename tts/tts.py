@@ -27,7 +27,7 @@ class TTS(commands.Cog):
                 if connect_perms and speak_perms is True:
                     print("elIF")
                     try:
-                        await author_channel.channel.connect()
+                        ctx.voice_state.voice = await ctx.author.voice.channel.connect()
                         print("Connected")
                     except Exception as e:
                         print(e)
