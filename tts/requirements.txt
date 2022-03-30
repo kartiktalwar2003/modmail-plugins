@@ -1,2 +1,4 @@
 gtts
 PyNaCl
+discord.py[voice]
+discord
