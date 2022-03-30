@@ -32,9 +32,7 @@ class TTS(commands.Cog):
             pass
 
         lang = "hi"
-        speed = False
-
-        create_audio(text=text, lang=lang, speed=eval(speed), guild=ctx.guild.id)
+        create_audio(text=text, lang=lang, speed=False, guild=ctx.guild.id)
         file = str(str(ctx.guild.id) + "tts.mp3")
         audio = f"tts/{file}"
         vc = ctx.voice_client
