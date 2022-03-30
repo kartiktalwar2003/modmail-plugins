@@ -25,8 +25,11 @@ class TTS(commands.Cog):
                 
                 if connect_perms and speak_perms is True:
                     print("elIF")
-                    await author_channel.channel.connect()
-                    print("Connected")
+                    try:
+                        await author_channel.channel.connect()
+                        print("Connected")
+                    except Exception as e:
+                        print(e)
                     await ctx.reply(f"Joined {author_channel.channel.mention}", mention_author=False)
                     
                 if connect_perms or speak_perms is False:
