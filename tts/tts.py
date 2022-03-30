@@ -20,7 +20,9 @@ class TTS(commands.Cog):
             
             if connected_voice is None:
                 speak_perms = author_channel.channel.permissions_for(ctx.guild.me).speak
+                print(speak_perms)
                 connect_perms = author_channel.channel.permissions_for(ctx.guild.me).connect
+                print(connect_perms)
                 try:
                     await author_channel.channel.connect()
                 except:
