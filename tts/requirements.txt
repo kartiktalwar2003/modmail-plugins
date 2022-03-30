@@ -1,2 +1,2 @@
 gtts
-discord[voice]
+PyNaCl

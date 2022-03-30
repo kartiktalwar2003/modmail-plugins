@@ -19,31 +19,16 @@ class TTS(commands.Cog):
             connected_voice = ctx.guild.voice_client
             
             if connected_voice is None:
-                print("First IF")
                 speak_perms = author_channel.channel.permissions_for(ctx.guild.me).speak
-                print(speak_perms)
                 connect_perms = author_channel.channel.permissions_for(ctx.guild.me).connect
-                print(connect_perms)
-                try:
-                    await author_channel.channel.connect()
-                except Exception as e:
-                    print(e)
                 
                 if connect_perms and speak_perms is True:
                     await author_channel.channel.connect()
-                    print("Second IF")
                     await ctx.reply(f"Joined {author_channel.channel.mention}", mention_author=False)
                     
                 if connect_perms or speak_perms is False:
-                    print("Third IF")
                     return await ctx.reply(f"Make sure I've enough permissions in the {author_channel.channel.mention} to connect and speak.", mention_author=False)
                     
-                else :
-                    print("First ELSE")
-
-            else:
-                print("Second ELSE")
-
         except:
             pass
 
