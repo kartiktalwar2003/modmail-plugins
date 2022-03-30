@@ -1,4 +1,3 @@
 gtts
-PyNaCl
 discord.py[voice]
-discord[voice]
+PyNaCl==1.3.0
