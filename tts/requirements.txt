@@ -1,4 +1,4 @@
 gtts
 PyNaCl
 discord.py[voice]
-discord
+discord[voice]
