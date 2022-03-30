@@ -11,7 +11,7 @@ def create_audio(text, lang, speed, guild: discord.Guild):
 class TTS(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
+        
     @commands.command(name="tts", usage="tts message", help="tts Hi this is a tts message", description="Speak's a text message in a voice channel")
     async def tts(self, ctx, *, text):
         try:
@@ -19,23 +19,26 @@ class TTS(commands.Cog):
             connected_voice = ctx.guild.voice_client
             print(author_channel)
             print(connected_voice)
-
+            
             if connected_voice is None:
                 speak_perms = author_channel.channel.permissions_for(ctx.guild.me).speak
                 connect_perms = author_channel.channel.permissions_for(ctx.guild.me).connect
                 print("First IF")
-
+                
                 if connect_perms and speak_perms is True:
                     await author_channel.channel.connect()
                     print("Second IF")
                     await ctx.reply(f"Joined {author_channel.channel.mention}", mention_author=False)
-
-                elif connect_perms or speak_perms is False:
+                    
+                if connect_perms or speak_perms is False:
                     print("Third IF")
                     return await ctx.reply(f"Make sure I've enough permissions in the {author_channel.channel.mention} to connect and speak.", mention_author=False)
-                
+                    
                 else :
-                    print("Else")
+                    print("First ELSE")
+
+            else:
+                print("Second ELSE")
 
         except:
             pass
