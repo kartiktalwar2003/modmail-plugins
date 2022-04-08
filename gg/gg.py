@@ -20,7 +20,7 @@ class GG(commands.Cog):
                 if message.author.bot is True :
                         pass
                 else :
-                        if str(message.channel.id) == "894148486554079232" :
+                        if str(message.channel.id) == "934482381983858718" :
                                 extractor = URLExtract()
                                 if extractor.has_urls(message.content):
                                         pass
